@@ -336,6 +336,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3392114541030538918, guid: a3c781b5b3e85424885236a05fc6fb60,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 77b268f2566027143834b0f6eb52580e, type: 3}
+    - target: {fileID: 3392114541030538919, guid: a3c781b5b3e85424885236a05fc6fb60,
+        type: 3}
+      propertyPath: Gravity
+      value: -20
+      objectReference: {fileID: 0}
     - target: {fileID: 3392114541030538919, guid: a3c781b5b3e85424885236a05fc6fb60,
         type: 3}
       propertyPath: JumpForce
