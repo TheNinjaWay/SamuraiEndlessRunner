@@ -13,6 +13,7 @@ public class PlayerMotion : MonoBehaviour
     public float JumpForce;
     public float Gravity = -20;
     private bool isJumping;
+    private bool isSlading;
     public Animator animator;
     public AudioManager audioManager;
 
@@ -51,8 +52,15 @@ public class PlayerMotion : MonoBehaviour
             isJumping = false;
             if (SwipeManager.swipeUp)
             {
+                animator.SetBool("isSlading", false);
                 Jump();
             }
+        }
+
+        if (SwipeManager.swipeDown && isSlading == false)
+        {
+            animator.SetBool("isJumping", false);
+            StartCoroutine(Slider());
         }
 
         if (SwipeManager.swipeRight)
@@ -62,6 +70,7 @@ public class PlayerMotion : MonoBehaviour
             {
                 desiredlane = 2;
             }
+            
         }
         if (SwipeManager.swipeLeft)
         {
@@ -70,6 +79,7 @@ public class PlayerMotion : MonoBehaviour
             {
                 desiredlane = 0;
             }
+           
         }
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
@@ -94,5 +104,14 @@ public class PlayerMotion : MonoBehaviour
         isJumping = true;
         dir.y = JumpForce;
        
+    }
+
+    IEnumerator Slider()
+    {
+        isSlading = true;
+        animator.SetBool("isSlading",true);
+        yield return new WaitForSeconds(1.15f);
+        animator.SetBool("isSlading", false);
+        isSlading = false;
     }
 }

@@ -299,7 +299,6 @@ MonoBehaviour:
   maincamera: {fileID: 805602129}
   startcamera: {fileID: 1461488638}
   TapToStarttext: {fileID: 1968325519}
-  audioManager: {fileID: 765442693}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,6 +620,11 @@ PrefabInstance:
       propertyPath: m_Avatar
       value: 
       objectReference: {fileID: 9000000, guid: 77b268f2566027143834b0f6eb52580e, type: 3}
+    - target: {fileID: 3392114541030538919, guid: a3c781b5b3e85424885236a05fc6fb60,
+        type: 3}
+      propertyPath: speed
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 3392114541030538919, guid: a3c781b5b3e85424885236a05fc6fb60,
         type: 3}
       propertyPath: Gravity
