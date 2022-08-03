@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     public float zpawn = 0;
     public float tileLenght = 30f;
     public int numberofTiles = 3;
-    //public InterfaceManager interfaceManager;
+    public InterFaceManager interfaceManager;
     public Transform playerTransform;
     public List<GameObject> activeTiles = new List<GameObject>();
 
