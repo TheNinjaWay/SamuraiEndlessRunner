@@ -9,14 +9,15 @@ public class InterFaceManager : MonoBehaviour
     public GameObject maincamera;
     public GameObject startcamera;
     public GameObject TapToStarttext;
+    //public AudioManager audioManager;
 
     void Start()
     {
         isGameStarted = false;
-        
+       
     }
 
-   
+
     void Update()
     {
         if (SwipeManager.tap)
@@ -25,6 +26,7 @@ public class InterFaceManager : MonoBehaviour
             startcamera.SetActive(false);
             maincamera.SetActive(true);
             TapToStarttext.SetActive(false);
+            //audioManager.PlayRuning();
             isGameStarted = true;
         }
     }

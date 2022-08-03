@@ -14,17 +14,20 @@ public class PlayerMotion : MonoBehaviour
     public float Gravity = -20;
     private bool isJumping;
     public Animator animator;
+    public AudioManager audioManager;
 
 
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        //animator = GetComponent<Animator>();
+        //audioManager = GameManager.instance.playerGameObject.GetComponent<AudioManager>();
     }
 
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        
     }
 
    
@@ -34,7 +37,6 @@ public class PlayerMotion : MonoBehaviour
         {
             return;
         }
-
         dir.z = speed;
         dir.y += Gravity * Time.deltaTime;
         controller.Move(dir * Time.deltaTime);
@@ -88,6 +90,7 @@ public class PlayerMotion : MonoBehaviour
     private void Jump()
     {
         animator.SetBool("isJumping", true);
+        audioManager.PlayJump();
         isJumping = true;
         dir.y = JumpForce;
        
