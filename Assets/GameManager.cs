@@ -68,5 +68,5 @@ public class GameManager : MonoBehaviour
         Destroy(activeTiles[0]);
         activeTiles.RemoveAt(0);
     }
-
+    // best case scenario un timer para cambiar de lista de tiles o mas levels
 }
